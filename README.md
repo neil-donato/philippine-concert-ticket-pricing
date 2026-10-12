@@ -114,7 +114,7 @@ For the selected Random Forest, mean absolute percentage error across test recor
 
 ## Skills Demonstrated
 
-Data quality checks · Data cleaning · Feature engineering · Exploratory data analysis · Statistical visualization · Group-aware train/test splitting · Regression pipelines · Model comparison · Feature importance · Residual analysis · Model serialization
+Data quality checks | Data cleaning | Feature engineering | Exploratory data analysis | Statistical visualization | Group-aware train/test splitting | Regression pipelines | Model comparison | Feature importance | Residual analysis | Model serialization
 
 ## Author
 

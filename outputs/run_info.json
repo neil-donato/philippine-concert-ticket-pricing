@@ -1,0 +1,16 @@
+{
+  "data_origin": [
+    "SYNTHETIC_SIMULATED"
+  ],
+  "rows": 20000,
+  "events": 2500,
+  "selected_model": "Gradient Boosting",
+  "ensemble_members": [
+    "Gradient Boosting",
+    "Extra Trees",
+    "Random Forest"
+  ],
+  "interval_coverage_80_raw": 0.6915,
+  "interval_coverage_80_conformal": 0.79375,
+  "interval_width_pct_conformal": 31.434288829135326
+}

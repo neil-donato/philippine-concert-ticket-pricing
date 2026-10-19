@@ -1,0 +1,75 @@
+20,000 rows, 2,500 events x 8 tiers; data_origin = ['SYNTHETIC_SIMULATED']
+Train/test records: 16,000/4,000; events: 2,000/500
+Tuning Random Forest (10 configs x 5 grouped folds)...
+  CV MAE PHP 577
+Tuning Extra Trees (10 configs x 5 grouped folds)...
+  CV MAE PHP 567
+Tuning Gradient Boosting (10 configs x 5 grouped folds)...
+  CV MAE PHP 559
+Tuning Neural Network (10 configs x 5 grouped folds)...
+  CV MAE PHP 713
+Ensemble of ['Gradient Boosting', 'Extra Trees', 'Random Forest']: CV MAE PHP 560
+
+GROUPED CROSS-VALIDATION (training events only)
+                 Model  CV MAE  CV MAE Std
+     Gradient Boosting   559.0        19.3
+      Ensemble (top 3)   559.6        19.5
+           Extra Trees   566.6        17.6
+         Random Forest   576.6        18.4
+        Neural Network   713.1        11.1
+Benchmark: tier median  1395.2        26.6
+
+Selected by CV MAE: Gradient Boosting
+
+TEST SET (held-out events, scored once, not used for selection)
+                             MAE      RMSE     R2    MAPE
+Ensemble (top 3)         545.094   786.564  0.962   9.486
+Gradient Boosting        547.027   787.057  0.962   9.519
+Extra Trees              555.078   801.965  0.960   9.692
+Random Forest            558.362   806.750  0.960   9.668
+Neural Network           674.821   980.485  0.941  11.474
+Benchmark: tier median  1403.300  1982.423  0.757  27.127
+
+FEATURE ABLATION (Gradient Boosting configuration, held-out events)
+                                   MAE      RMSE     R2    MAPE
+All pre-sale features (main)   547.027   787.057  0.962   9.519
+Plus simulated demand index    548.889   788.473  0.962   9.546
+Drop artist popularity        1252.635  1703.914  0.821  22.925
+Drop artist category           812.507  1135.436  0.920  14.498
+Drop venue and capacity        712.644  1043.756  0.933  12.233
+Ticket tier only              1409.810  1984.180  0.757  26.288
+
+OUT-OF-TIME CHECK: train on events before 2026 (14,848 rows), test on 2026 (5,152 rows)
+                             MAE      RMSE     R2    MAPE
+Gradient Boosting        548.978   799.910  0.962   9.203
+Benchmark: tier median  1464.286  2032.372  0.758  26.421
+
+ERROR BY TIER
+                      MAE  MAPE
+tier                           
+General Admission   176.5   9.7
+Upper Box           262.8   9.5
+Regular Seated      334.7   9.4
+Lower Box           403.2   9.6
+Premium Seated      470.1   9.2
+VIP                 692.1   9.4
+VIP Soundcheck      887.6   9.5
+VVIP               1149.3   9.7
+
+80% INTERVALS on held-out events: raw quantile models cover 69%; conformalized cover 79% (target 80%), mean width 31% of the prediction
+
+PERMUTATION IMPORTANCE
+                  Feature  MAE increase (PHP)  Std
+                tier_rank              3428.1 42.5
+  artist_popularity_index              1041.0  8.3
+          artist_category               450.0 13.8
+             log_capacity               264.8  3.6
+                month_sin                 0.9  0.4
+                month_cos                 0.7  0.3
+              day_of_week                 0.2  0.3
+                     year                 0.1  0.4
+            weekend_event                 0.1  0.3
+days_before_event_listing                 0.0  0.3
+           ticketing_fees                -0.4  0.2
+         city_or_province                -0.4  0.2
+                    venue                -1.5  0.4

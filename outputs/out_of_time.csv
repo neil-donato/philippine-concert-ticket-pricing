@@ -1,0 +1,3 @@
+,MAE,RMSE,R2,MAPE
+Gradient Boosting,548.978,799.9095,0.9625,9.2032
+Benchmark: tier median,1464.2857,2032.3716,0.7577,26.4213

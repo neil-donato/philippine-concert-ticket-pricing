@@ -1,0 +1,14 @@
+Feature,MAE increase (PHP),Std
+tier_rank,3428.124,42.519
+artist_popularity_index,1040.976,8.269
+artist_category,450.016,13.779
+log_capacity,264.84,3.585
+month_sin,0.946,0.439
+month_cos,0.748,0.253
+day_of_week,0.153,0.346
+year,0.137,0.362
+weekend_event,0.101,0.327
+days_before_event_listing,0.021,0.295
+ticketing_fees,-0.425,0.161
+city_or_province,-0.443,0.177
+venue,-1.519,0.426

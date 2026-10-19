@@ -1,0 +1,7 @@
+Model,CV MAE,CV MAE Std
+Gradient Boosting,559.0,19.3
+Ensemble (top 3),559.57,19.46
+Extra Trees,566.62,17.56
+Random Forest,576.64,18.36
+Neural Network,713.1,11.09
+Benchmark: tier median,1395.21,26.62

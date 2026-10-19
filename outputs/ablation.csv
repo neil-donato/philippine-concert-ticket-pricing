@@ -1,0 +1,7 @@
+,MAE,RMSE,R2,MAPE
+All pre-sale features (main),547.0273,787.0572,0.9617,9.5192
+Plus simulated demand index,548.8891,788.4729,0.9616,9.5463
+Drop artist popularity,1252.6355,1703.9138,0.8207,22.9253
+Drop artist category,812.507,1135.4357,0.9204,14.4984
+Drop venue and capacity,712.6445,1043.7556,0.9327,12.2327
+Ticket tier only,1409.8103,1984.1798,0.7568,26.2877
